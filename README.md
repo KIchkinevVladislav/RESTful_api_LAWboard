@@ -58,3 +58,19 @@
    http://localhost:8000/api/v1/token/           #Получить JWT-токен 
     
    http://localhost:8000/api/v1/token/refresh/   #Обновить JWT-токен 
+   
+   ## Запуск приложения.
+  
+  Установите зависимости из requirements.txt:
+
+  pip install -r requirements.txt
+
+  Для доступа к панели администратора создайте администратора:
+
+  python manage.py createsuperuser
+
+  Запустите приложение:
+
+  python manage.py runserver
+  
+  Протестировать доступ к ресурсам по ссылка удобно с использование Postman
