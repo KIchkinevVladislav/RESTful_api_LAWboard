@@ -8,14 +8,12 @@ from rest_framework_simplejwt.views import (
 
 from . views import  PostViewSet, CommentViewSet, FollowingViewSet, GroupViewSet
 
-
 router = DefaultRouter()
 router.register('posts', PostViewSet, basename='posts')
 comments_router = routers.NestedDefaultRouter(router, r'posts', lookup='posts')
 comments_router.register(r'comments', CommentViewSet, basename='comments')
 router.register('follow', FollowingViewSet, basename='follow')
 router.register('group', GroupViewSet, basename='group')
-
 
 urlpatterns = [
     path('', include(router.urls)),
