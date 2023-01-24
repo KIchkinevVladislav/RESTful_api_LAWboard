@@ -2,10 +2,10 @@ from requests import Response
 from rest_framework import viewsets, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
 
-
 from .models import Post, Comment, Follow, Group
 from .serializers import PostSerializer, CommentSerializer, FollowSerializer, GroupSerializer
 from .permissions import OwnResoursePermission
+
 
 class PerformCreateMixsin:
     """
@@ -66,10 +66,4 @@ class GroupViewSet(viewsets.ModelViewSet, PerformCreateMixsin):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-
-
-
-
-
-    
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]  
