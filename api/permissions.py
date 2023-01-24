@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+
 class OwnResoursePermission(permissions.BasePermission):
     message = 'Это действие для Вас невозможно'
 
@@ -7,3 +8,4 @@ class OwnResoursePermission(permissions.BasePermission):
         if request.method in ('POST', 'DELETE', 'PUT', 'PATCH'):
             return request.user == obj.author 
         return True
+    
