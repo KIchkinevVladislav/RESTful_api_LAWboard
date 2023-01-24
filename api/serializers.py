@@ -19,6 +19,7 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = ('id', 'author', 'post', 'text', 'created')
         model = Comment
 
+        
 class FollowSerializer(serializers.ModelSerializer):
     field = ('user', 'following')
     model = Follow
@@ -33,6 +34,7 @@ class FollowSerializer(serializers.ModelSerializer):
             raise ValidationError()
         return data
 
+    
 class GroupSerializer(serializers.ModelSerializer):
     field = ('title',)
     model = Group
