@@ -58,6 +58,7 @@ class FollowingViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter]
     search_fields = ['=user__username', '=following__username']
 
+    
 class GroupViewSet(viewsets.ModelViewSet, PerformCreateMixsin):
     """
     Implemented:
