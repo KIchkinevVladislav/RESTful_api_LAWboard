@@ -6,7 +6,6 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-
 from . views import  PostViewSet, CommentViewSet, FollowingViewSet, GroupViewSet
 
 router = DefaultRouter()
