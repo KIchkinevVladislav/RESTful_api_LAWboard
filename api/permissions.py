@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+
 class OwnResoursePermission(permissions.BasePermission):
     message = 'Это действие для Вас невозможно'
 
