@@ -14,6 +14,7 @@ class PerformCreateMixsin:
     def perform_create(self, serializer):
         return serializer.save(author=self.request.user)
 
+    
 class PostViewSet(viewsets.ModelViewSet, PerformCreateMixsin):
     """
     Implemented:
@@ -29,6 +30,7 @@ class PostViewSet(viewsets.ModelViewSet, PerformCreateMixsin):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['group',]
 
+    
 class CommentViewSet(viewsets.ModelViewSet, PerformCreateMixsin):
     """
     Implemented:
@@ -45,6 +47,7 @@ class CommentViewSet(viewsets.ModelViewSet, PerformCreateMixsin):
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
 
+    
 class FollowingViewSet(viewsets.ModelViewSet):
     """
     Implemented:
