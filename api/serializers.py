@@ -3,6 +3,7 @@ from rest_framework.exceptions import ValidationError
 
 from .models import Post, Comment, Group, Follow, User
 
+
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
 
