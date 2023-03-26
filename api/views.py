@@ -6,7 +6,6 @@ from .models import Post, Comment, Follow, Group
 from .serializers import PostSerializer, CommentSerializer, FollowSerializer, GroupSerializer
 from .permissions import OwnResoursePermission
 
-
 class PerformCreateMixsin:
     """
     Overriding perform_create function to save the requesting user as the author.
