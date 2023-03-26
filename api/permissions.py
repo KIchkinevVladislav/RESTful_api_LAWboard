@@ -7,5 +7,4 @@ class OwnResoursePermission(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in ('POST', 'DELETE', 'PUT', 'PATCH'):
             return request.user == obj.author 
-        return True
-    
+        return True  
