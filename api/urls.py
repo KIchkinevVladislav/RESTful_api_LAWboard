@@ -7,6 +7,7 @@ from rest_framework_simplejwt.views import (
 )
 from . views import  PostViewSet, CommentViewSet, FollowingViewSet, GroupViewSet
 
+
 router = DefaultRouter()
 router.register('posts', PostViewSet, basename='posts')
 comments_router = routers.NestedDefaultRouter(router, r'posts', lookup='posts')
