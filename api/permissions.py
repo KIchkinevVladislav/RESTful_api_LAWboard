@@ -8,3 +8,4 @@ class OwnResoursePermission(permissions.BasePermission):
         if request.method in ('POST', 'DELETE', 'PUT', 'PATCH'):
             return request.user == obj.author 
         return True  
+
